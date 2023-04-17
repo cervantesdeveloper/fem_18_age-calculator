@@ -1,42 +1,128 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+:root{
+  /*colors*/
+  --color-white: rgb(255, 255, 255);
+  --color-white-oyster: rgb(240, 240, 240);
+  --color-grey-light: rgb(219, 219, 219);
+  --color-grey-smoke: rgb(113, 111, 111);
+  --color-black: rgb(20, 20, 20);
+  --color-purple: rgb(134, 76, 255);
+  --color-alert: rgb(243, 77, 91);
+
+  /*fonts*/
+  --font-body: 'Poppins', sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App{
+  max-width: 52.5rem;
+  margin: 4.5rem auto 0;
+  padding: 2.75rem 1.5rem;
+  background-color: var(--color-white);
+  border-radius: 1.5rem 1.5rem 6rem 1.5rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ===== Form start ===== */
+
+.form{
+  display: flex;
+  position: relative;
+  border-bottom: 2px solid var(--color-white-oyster);
+  justify-content: space-between;
+}
+
+.input-wrapper{
+  min-height: 11.625rem;
+  width: calc((100% - 2rem) / 3);
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper label{
+  font-size: .5625rem;
+  line-height: 3;
+  font-weight: 700;
+  color: var(--color-grey-smoke);
+}
+
+.input-wrapper.invalid input[type="number"]{
+  border-color: var(--color-alert);
+}
+
+.input-wrapper.invalid label{
+  color: var(--color-alert);
+}
+
+input[type="number"]{
+  height: 3.375rem;
+  padding-left: 1rem;
+  color: var(--color-black);
+  font-family: var(--font-body);
+  font-weight: 700;
+  border: unset;
+  border: 1px solid var(--color-grey-light);
+  border-radius: .5rem;
+  outline: none;
+}
+
+input[type="number"]:focus-visible{
+  border-color: var(--color-purple);
+}
+
+input[type="number"]::placeholder{
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-grey-smoke);
+}
+
+.input-wrapper p {
+  font-size: .75rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-alert);
+  margin-top: .5625rem;
+}
+
+input.btn{
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border: unset;
+  background: var(--color-purple) url(./assets/icon-arrow.svg) ;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50%;
+  cursor: pointer;
+  transition: 
+    opacity .3s ease-in-out,
+    background-color .3s ease-in-out;
+}
+
+input.btn:hover{
+  background-color: var(--color-black);
+}
+
+/* ===== Form end ===== */
+
+/* ===== Utilities start ===== */
+
+  input.btn.disabled{
+    filter: grayscale(.75);
+    cursor: not-allowed;
   }
-  to {
-    transform: rotate(360deg);
+
+  input.btn.disabled:hover{
+    background-color: var(--color-purple);
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .hidden{
+    visibility: hidden;
+    opacity: 0;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+/* ===== Utilities end ===== */
