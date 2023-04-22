@@ -14,12 +14,21 @@
   --font-body: 'Poppins', sans-serif;
 }
 
+
 .App{
   max-width: 52.5rem;
   margin: 4.5rem auto 0;
   padding: 2.75rem 1.5rem;
   background-color: var(--color-white);
   border-radius: 1.5rem 1.5rem 6rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .App{
+      margin: 8.625rem auto 0;
+      padding: 3.5rem 3.5rem 2.5rem;
+      border-bottom-right-radius: 12rem;
+    }
 }
 
 /* ===== Form start ===== */
@@ -109,6 +118,42 @@ input.btn:hover{
   background-color: var(--color-black);
 }
 
+@media (min-width: 768px) {
+  .form{
+    justify-content: flex-start;
+  }
+
+  .input-wrapper{
+    width: 10rem;
+  }
+
+  .input-wrapper:not(:last-child){
+    margin-right: 2rem;
+  }
+
+  .input-wrapper label{
+    margin-bottom: .625rem;
+  }
+
+  input[type="number"]{
+    height: 4.5rem;
+    padding-left: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  input[type="number"]::placeholder{
+    font-size: 1.5rem;
+  }
+
+  input.btn{
+    width: 6rem;
+    height: 6rem;
+    bottom: -3rem;
+    left: 100%;
+    transform: translateX(-100%);
+  }
+}
+
 /* ===== Form end ===== */
 
 /* ===== Result start ===== */
@@ -125,6 +170,17 @@ input.btn:hover{
 
 .result__paragraph span{
   color: var(--color-purple);
+}
+
+@media (min-width: 768px) {
+    .result{
+      margin-top: 3rem;
+    }
+
+    .result__paragraph{
+      font-size: 5rem;
+      line-height: 1.5;
+    }
 }
 
 
