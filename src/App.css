@@ -25,7 +25,7 @@
 
 @media (min-width: 768px) {
     .App{
-      margin: 8.625rem auto 0;
+      margin-top: calc((100vh - 684px) / 2 );
       padding: 3.5rem 3.5rem 2.5rem;
       border-bottom-right-radius: 12rem;
     }
@@ -185,6 +185,15 @@ input.btn:hover{
 
 
 /* ===== Result end ===== */
+
+/* ===== Footer start ===== */
+.attribution{
+  margin-top: 1rem;
+  width: 100%;
+  text-align: center;
+
+}
+/* ===== Footer end ===== */
 
 /* ===== Utilities start ===== */
 
